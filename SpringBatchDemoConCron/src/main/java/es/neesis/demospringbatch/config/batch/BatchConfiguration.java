@@ -42,10 +42,10 @@ public class BatchConfiguration {
     public ItemReader<User> reader() {
         return new FlatFileItemReaderBuilder<User>()
                 .name("userItemReader")
-                .resource(new ClassPathResource("sample.csv"))
+                .resource(new ClassPathResource("operations.csv"))
                 .linesToSkip(1)
                 .delimited()
-                .names("id", "username", "password", "email")
+                .names("operation", "username", "password", "email")
                 .fieldSetMapper(new BeanWrapperFieldSetMapper<User>() {{
                     setTargetType(User.class);
                 }}).build();
@@ -72,6 +72,7 @@ public class BatchConfiguration {
                 .build();
     }
 
+
     @Bean
     public Step step1(ItemReader<User> reader, ItemWriter<UserEntity> writer, ItemProcessor<User, UserEntity> processor) {
         String stepName = "step1";
@@ -94,6 +95,7 @@ public class BatchConfiguration {
                 .tasklet(showUserInfoTasklet)
                 .build();
     }
+
 
     @Bean
     public JobRegistryBeanPostProcessor jobRegistryBeanPostProcessor(JobRegistry jobRegistry) {
