@@ -6,8 +6,8 @@ INSERT,employee,employee,employee@group.com
 INSERT,client,client,client@group.com
 INSERT,partner,partner,partner@group.com
 INSERT,visitor,visitor,visitor@group.com
-DELETE,client,client,client@group.com
-DELETE,partner,partner,partner@group.com
 UPDATE,admin,miguel,admin@group.com
 UPDATE,user,contrasena,user@group.com
 UPDATE,manager,michel,manager@group.com
+DELETE,client,client,client@group.com
+DELETE,partner,partner,partner@group.com

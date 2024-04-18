@@ -53,6 +53,7 @@ public class UserWriter implements ItemWriter<UserEntity> {
                 .beanMapped()
                 .sql(query)
                 .dataSource(dataSource)
+                .assertUpdates(false)
                 .build();
         builder.afterPropertiesSet();
 
